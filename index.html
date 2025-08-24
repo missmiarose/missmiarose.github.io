@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Single Image Page</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background-color: #000; /* Black background */
+      font-family: Arial, sans-serif;
+    }
+    img {
+      max-width: 90%;
+      max-height: 70%;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(255,255,255,0.2);
+    }
+    a.button {
+      margin-top: 20px;
+      text-decoration: none;
+      background: #0073e6;
+      color: white;
+      padding: 10px 18px;
+      border-radius: 8px;
+      font-size: 16px;
+      transition: background 0.3s;
+    }
+    a.button:hover {
+      background: #005bb5;
+    }
+  </style>
+</head>
+<body>
+  <img src="your-image.jpg" alt="My Image">
+  <a href="contact.html" class="button">Contact Page</a>
+</body>
+</html>
