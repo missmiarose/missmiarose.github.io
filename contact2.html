@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Contact Us</title>
+<style>
+:root{--bg:#000;--card:#0b0f14;--fg:#e6eef8;--muted:#94a3b8;--accent:#9146ff}
+*{box-sizing:border-box}html,body{height:100%}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:system-ui,Segoe UI,Roboto,Helvetica,Arial;display:grid;place-items:center}
+.card{width:min(740px,92%);background:linear-gradient(180deg,rgba(255,255,255,.02),rgba(255,255,255,.01));padding:2rem;border-radius:12px;border:1px solid rgba(255,255,255,.04);box-shadow:0 10px 30px rgba(0,0,0,.6);}
+h1{margin:0 0 .25rem;font-size:clamp(1.4rem,1rem+2vw,2.2rem)}p{margin:.25rem 0;color:var(--muted)}
+.links{display:flex;gap:.75rem;flex-wrap:wrap;margin-top:1rem}
+.btn{display:inline-flex;align-items:center;gap:.5rem;padding:.7rem 1rem;border-radius:999px;text-decoration:none;font-weight:600}
+.email{background:linear-gradient(90deg,#0f172a,#020617);border:1px solid rgba(255,255,255,.04);color:var(--fg)}
+.twitch{background:linear-gradient(90deg,#4b2779,#2b2350);color:white;border:1px solid rgba(255,255,255,.04)}
+
+
+footer{position:fixed;left:50%;transform:translateX(-50%);bottom:12px;color:rgba(226,232,240,.2);font-size:.85rem}
+
+
+/* Secret button + hotspot */
+.secret-btn{position:fixed;bottom:20px;right:20px;padding:.85rem 1.1rem;border-radius:999px;background:linear-gradient(135deg,#06b6d4,#7c3aed);color:white;font-weight:700;border:none;box-shadow:0 8px 20px rgba(124,58,237,.25);transform:translateY(16px);opacity:0;pointer-events:none;transition:opacity .25s,transform .25s}
+.secret-btn.show{opacity:1;transform:translateY(0);pointer-events:auto}
+.hotspot{position:fixed;bottom:0;right:0;width:56px;height:56px;background:transparent;z-index:10}
+.hotspot::after{content:"";position:absolute;width:2px;height:2px;bottom:10px;right:10px;background:rgba(255,255,255,.04);border-radius:50%}
+
+
+@media (prefers-reduced-motion:reduce){.secret-btn{transition:none}}
+</style>
+</head>
+<body>
+<main class="card" role="main">
+<h1>Contact</h1>
+<p>I'd love to hear from you. Use the links below to send an email or visit my Twitch channel.</p>
+
+
+<div class="links" aria-label="contact links">
+<a class="btn email" href="contact@missmiarose.com" id="emailLink" title="Send an email">📧 Email</a>
+<a class="btn twitch" href="https://twitch.tv/missmiarose" id="twitchLink" target="_blank" rel="noopener" title="Visit Twitch">🎮 Twitch</a>
+</div>
+
+
+<p style="margin-top:1rem;color:var(--muted)">Secret: triple-click or long-press the lower-right corner, or type <kbd>opensesame</kbd> to reveal a hidden link.</p>
+</main>
+
+
+<div id="hotspot" class="hotspot" aria-hidden="true"></div>
+<a id="secretLink" class="secret-btn" href="http://missmiarose.com/nadja" target="_blank" rel="noopener">Secret Link ↗</a>
+<footer>&copy; <span id="year"></span></footer>
+
+
+<script>
+// Simple reveal logic (triple-click, long-press, or typing)
+const secretBtn = document.getElementById('secretLink');
+const hotspot = document.getElementById('hotspot');
+const SECRET = 'opensesame';
+let buffer = '';
+
+
+// Triple click
+let clicks = 0, clickTimer = null;
+hotspot.addEventListener('click', ()=>{
+clicks++;
+clearTimeout(clickTimer);
+clickTimer = setTimeout(()=>clicks=0,600);
+if(clicks>=3){ showSecret(true); clicks=0 }
+});
+
+
+// Long press
+let pressTimer = null;
+const startPress = ()=>{ clearTimeout(pressTimer); pressTimer=setTimeout(()=>showSecret(true),700) };
+const cancelPress = ()=>clearTimeout(pressTimer);
+hotspot.addEventListener('mousedown', startPress);
+hotspot.addEventListener('touchstart', startPress, {passive:true});
+['mouseup','mouseleave','touchend','touchcancel'].forEach(e=>hotspot.addEventListener(e,cancelPress));
+
+
+// Keyboard phrase
+window.addEventListener('keydown', (e)=>{
+if(e.key.length===1){ buffer=(buffer+e.key.toLowerCase()).slice(-SECRET.length); if(buffer===SECRET){ showSecret(); buffer=''; }}
+else if(e.key==='Escape'){ showSecret(false) }
+});
+
+
+function showSecret(force){ const shouldShow = typeof force==='boolean' ? force : !secretBtn.classList.contains('show'); secretBtn.classList.toggle('show', shouldShow); if(shouldShow) secretBtn.focus({preventScroll:true}); }
+
+
+// Auto-hide after inactivity
+let hideTimer; const armHide=()=>{ clearTimeout(hideTimer); hideTimer=setTimeout(()=>showSecret(false),20000) };
+['mousemove','keydown','touchstart','click'].forEach(e=>window.addEventListener(e, armHide)); armHide();
+
+
+document.getElementById('year').textContent = new Date().getFullYear();
+
+
+// --- Customization hints for users editing the file ---
+// - Change the mailto: href on #emailLink to your email address.
+// - Change the #twitchLink href to your Twitch profile.
+// - Edit the href on #secretLink to point wherever you like.
+</script>
+</body>
+</html>
