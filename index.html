@@ -15,12 +15,16 @@
       background-color: #000; /* Black background */
       font-family: Arial, sans-serif;
     }
-    img {
+    a img {
       max-width: 90%;
       max-height: 70%;
       border-radius: 12px;
       box-shadow: 0 4px 12px rgba(255,255,255,0.2);
+      transition: transform .25s ease;
     }
+    a img:hover {
+      transform: scale(1.04);
+    }  
     a.button {
       margin-top: 20px;
       text-decoration: none;
@@ -37,7 +41,9 @@
   </style>
 </head>
 <body>
+<a href= "./alpha-6.html" target="_blank" rel="noopener">
   <img src="./logo.jpg" alt="Miss Mia Rose Productions">
+</a>
   <a href="contact2.html" class="button">Contact Page</a>
 </body>
 </html>
