@@ -101,6 +101,50 @@
       color: #ffd700;
     }
 
+    /* Team section styling */
+    .team {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+
+    .team-member {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background: #1a1a1a;
+      padding: 1.5rem;
+      border-radius: 12px;
+      border: 1px solid #333;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.5);
+    }
+
+    .team-member img {
+      width: 150px;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 3px solid #ffd700;
+      margin-bottom: 1rem;
+    }
+
+    .team-member h3 {
+      margin: 0.5rem 0;
+      color: #ffd700;
+    }
+
+    .team-member p {
+      font-size: 0.95rem;
+      text-align: center;
+      color: #ddd;
+    }
+
+    @media (min-width: 700px) {
+      .team {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
     footer {
       text-align: center;
       padding: 2rem 1rem;
@@ -118,6 +162,7 @@
   </header>
 
   <main>
+    <!-- Our Mission Section -->
     <details>
       <summary>Our Mission</summary>
       <div>
@@ -135,6 +180,45 @@
         </ul>
         <p>
           At Miss Mia Rose Productions, we believe in fostering a sustainable, respectful, and opportunity-rich environment where creativity and talent can thrive — setting a new standard for the industry.
+        </p>
+      </div>
+    </details>
+
+    <!-- Our Team Section -->
+    <details>
+      <summary>Our Team</summary>
+      <div>
+        <p>
+          The strength of <strong>Miss Mia Rose Productions</strong> lies in the passion, creativity, and professionalism of our team. 
+          Together, we bring vision and dedication to every project:
+        </p>
+        <div class="team">
+          <!-- Team Member 1 -->
+          <div class="team-member">
+            <img src="miarose.png" alt="Mia Rose">
+            <h3>Mia Rose</h3>
+            <p><strong>Founder, Performer & Creative Director</strong><br>
+              Mia leads with vision, integrity, and a passion for elevating the art of film. Her dedication drives the company’s mission of fairness, artistry, and innovation.</p>
+          </div>
+
+          <!-- Team Member 2 -->
+          <div class="team-member">
+            <img src="alexfuch.png" alt="Alex Fuchs">
+            <h3>Alex Fuchs</h3>
+            <p><strong>Executive Producer and Performer</strong><br>
+              With a background in both traditional theatre, opera, and product and project management. Alex ensures every production maintains the highest quality standards, while supporting creative freedom.</p>
+          </div>
+
+          <!-- Team Member 3 -->
+          <div class="team-member">
+            <img src="./cleanface.png" alt="Dirty Cleanface">
+            <h3>Cleanface</h3>
+            <p><strong>Director</strong><br>
+              Director of both adult and mainstream offerings, Cleanface brings both direction and cinematography to our productions.</p>
+          </div>
+        </div>
+        <p>
+          Our team is more than a collection of professionals — we are collaborators working together to set a new benchmark for excellence in the industry.
         </p>
       </div>
     </details>
