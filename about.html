@@ -15,22 +15,26 @@
     }
 
     header {
-      background: linear-gradient(135deg, #000, #b8860b);
+      background: linear-gradient(135deg, #000, #b8860b); /* Black to gold */
       color: #f5f5f5;
       text-align: center;
       padding: 3rem 1rem;
+      border-bottom: 4px solid #b8860b;
     }
 
     header h1 {
       margin: 0;
       font-size: 2.5rem;
       letter-spacing: 2px;
+      color: #ffd700; /* Bright gold */
+      text-shadow: 2px 2px 6px rgba(0,0,0,0.8);
     }
 
     header p {
       margin-top: 0.5rem;
       font-size: 1.2rem;
       font-style: italic;
+      color: #f5f5f5;
     }
 
     main {
@@ -43,24 +47,47 @@
       text-align: center;
       font-size: 2rem;
       margin-bottom: 2rem;
-      color: #6a1b9a;
+      color: #ffd700; /* Gold heading */
     }
 
-    ul {
-      list-style-type: none;
+    details {
+      background: #111; /* Dark card */
+      margin-bottom: 1.2rem;
+      padding: 1rem 1.5rem;
+      border-radius: 12px;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.6);
+      border: 1px solid #333;
+      cursor: pointer;
+      overflow: hidden;
+    }
+
+    summary {
+      font-weight: bold;
+      color: #ffd700; /* Gold summary text */
+      outline: none;
+      font-size: 1.1rem;
+      list-style: none;
+    }
+
+    summary::-webkit-details-marker {
+      display: none; /* Hide default arrow */
+    }
+
+    details[open] summary {
+      color: #b8860b; /* Darker gold when expanded */
+    }
+
+    /* Collapsible content animation */
+    details > div {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.5s ease, padding 0.5s ease;
       padding: 0;
     }
 
-    ul li {
-      background: #111; /* Dark Card */
-      margin-bottom: 1.2rem;
-      padding: 1.5rem;
-      border-radius: 12px;
-      box-shadow: 0 3px 6px rgba(0,0,0,0.08);
-    }
-
-    ul li strong {
-      color: #ffd700;
+    details[open] > div {
+      max-height: 200px; /* enough for content */
+      padding-top: 0.8rem;
     }
 
     footer {
@@ -85,14 +112,48 @@
       At <strong>Miss Mia Rose Productions</strong>, our mission is to build a progressive and equitable future 
       for performers in the film industry. We are committed to:
     </p>
-    <ul>
-      <li><strong>Equity in Compensation</strong>: Ensuring female performers receive fair pay and ongoing residuals that recognize the true value of their work.</li>
-      <li><strong>Financial Empowerment</strong>: Providing performers with access to trusted, partnered financial planners to support long-term financial security and independence.</li>
-      <li><strong>Career Growth & Transition</strong>: Creating pathways for performers who wish to move into more traditional acting roles, offering mentorship, training, and industry connections to facilitate their transition.</li>
-      <li><strong>Raising Production Standards</strong>: Moving the industry away from poorly produced amateur content by creating high-quality, polished adult films that embody professionalism and artistry.</li>
-      <li><strong>Performance Development</strong>: Offering on-site acting and improv coaching to support performers in building confidence, range, and versatility.</li>
-      <li><strong>Elevating the Art Form</strong>: Not only producing compelling adult films, but actively working to redefine and elevate the genre as a legitimate, innovative, and respected art form.</li>
-    </ul>
+
+    <details>
+      <summary>Equity in Compensation</summary>
+      <div>
+        <p>Ensuring female performers receive fair pay and ongoing residuals that recognize the true value of their work.</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>Financial Empowerment</summary>
+      <div>
+        <p>Providing performers with access to trusted, partnered financial planners to support long-term financial security and independence.</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>Career Growth & Transition</summary>
+      <div>
+        <p>Creating pathways for performers who wish to move into more traditional acting roles, offering mentorship, training, and industry connections to facilitate their transition.</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>Raising Production Standards</summary>
+      <div>
+        <p>Moving the industry away from poorly produced amateur content by creating high-quality, polished adult films that embody professionalism and artistry.</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>Performance Development</summary>
+      <div>
+        <p>Offering on-site acting and improv coaching to support performers in building confidence, range, and versatility.</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>Elevating the Art Form</summary>
+      <div>
+        <p>Not only producing compelling adult films, but actively working to redefine and elevate the genre as a legitimate, innovative, and respected art form.</p>
+      </div>
+    </details>
 
     <p>
       At Miss Mia Rose Productions, we believe in fostering a sustainable, respectful, and opportunity-rich environment where creativity and talent can thrive — setting a new standard for the industry.
