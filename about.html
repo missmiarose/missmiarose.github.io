@@ -43,29 +43,23 @@
       padding: 0 1rem;
     }
 
-    h2 {
-      text-align: center;
-      font-size: 2rem;
-      margin-bottom: 2rem;
-      color: #ffd700; /* Gold heading */
-    }
-
     details {
       background: #111; /* Dark card */
-      margin-bottom: 1.2rem;
-      padding: 1rem 1.5rem;
+      margin-bottom: 2rem;
+      padding: 1.5rem;
       border-radius: 12px;
       box-shadow: 0 3px 6px rgba(0,0,0,0.6);
       border: 1px solid #333;
-      cursor: pointer;
       overflow: hidden;
     }
 
     summary {
+      font-size: 1.8rem;
       font-weight: bold;
-      color: #ffd700; /* Gold summary text */
+      text-align: center;
+      color: #ffd700; /* Gold */
+      cursor: pointer;
       outline: none;
-      font-size: 1.1rem;
       list-style: none;
     }
 
@@ -81,13 +75,30 @@
     details > div {
       max-height: 0;
       overflow: hidden;
-      transition: max-height 0.5s ease, padding 0.5s ease;
+      transition: max-height 0.6s ease, padding 0.6s ease;
       padding: 0;
     }
 
     details[open] > div {
-      max-height: 200px; /* enough for content */
-      padding-top: 0.8rem;
+      max-height: 2000px; /* large enough for full content */
+      padding-top: 1.5rem;
+    }
+
+    ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    ul li {
+      margin-bottom: 1rem;
+      padding: 1rem;
+      background: #1a1a1a;
+      border-radius: 8px;
+      border: 1px solid #333;
+    }
+
+    ul li strong {
+      color: #ffd700;
     }
 
     footer {
@@ -107,57 +118,26 @@
   </header>
 
   <main>
-    <h2>Our Mission</h2>
-    <p>
-      At <strong>Miss Mia Rose Productions</strong>, our mission is to build a progressive and equitable future 
-      for performers in the film industry. We are committed to:
-    </p>
-
     <details>
-      <summary>Equity in Compensation</summary>
+      <summary>Our Mission</summary>
       <div>
-        <p>Ensuring female performers receive fair pay and ongoing residuals that recognize the true value of their work.</p>
+        <p>
+          At <strong>Miss Mia Rose Productions</strong>, our mission is to build a progressive and equitable future 
+          for performers in the film industry. We are committed to:
+        </p>
+        <ul>
+          <li><strong>Equity in Compensation</strong>: Ensuring female performers receive fair pay and ongoing residuals that recognize the true value of their work.</li>
+          <li><strong>Financial Empowerment</strong>: Providing performers with access to trusted, partnered financial planners to support long-term financial security and independence.</li>
+          <li><strong>Career Growth & Transition</strong>: Creating pathways for performers who wish to move into more traditional acting roles, offering mentorship, training, and industry connections to facilitate their transition.</li>
+          <li><strong>Raising Production Standards</strong>: Moving the industry away from poorly produced amateur content by creating high-quality, polished adult films that embody professionalism and artistry.</li>
+          <li><strong>Performance Development</strong>: Offering on-site acting and improv coaching to support performers in building confidence, range, and versatility.</li>
+          <li><strong>Elevating the Art Form</strong>: Not only producing compelling adult films, but actively working to redefine and elevate the genre as a legitimate, innovative, and respected art form.</li>
+        </ul>
+        <p>
+          At Miss Mia Rose Productions, we believe in fostering a sustainable, respectful, and opportunity-rich environment where creativity and talent can thrive — setting a new standard for the industry.
+        </p>
       </div>
     </details>
-
-    <details>
-      <summary>Financial Empowerment</summary>
-      <div>
-        <p>Providing performers with access to trusted, partnered financial planners to support long-term financial security and independence.</p>
-      </div>
-    </details>
-
-    <details>
-      <summary>Career Growth & Transition</summary>
-      <div>
-        <p>Creating pathways for performers who wish to move into more traditional acting roles, offering mentorship, training, and industry connections to facilitate their transition.</p>
-      </div>
-    </details>
-
-    <details>
-      <summary>Raising Production Standards</summary>
-      <div>
-        <p>Moving the industry away from poorly produced amateur content by creating high-quality, polished adult films that embody professionalism and artistry.</p>
-      </div>
-    </details>
-
-    <details>
-      <summary>Performance Development</summary>
-      <div>
-        <p>Offering on-site acting and improv coaching to support performers in building confidence, range, and versatility.</p>
-      </div>
-    </details>
-
-    <details>
-      <summary>Elevating the Art Form</summary>
-      <div>
-        <p>Not only producing compelling adult films, but actively working to redefine and elevate the genre as a legitimate, innovative, and respected art form.</p>
-      </div>
-    </details>
-
-    <p>
-      At Miss Mia Rose Productions, we believe in fostering a sustainable, respectful, and opportunity-rich environment where creativity and talent can thrive — setting a new standard for the industry.
-    </p>
   </main>
 
   <footer>
