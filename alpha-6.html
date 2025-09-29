@@ -13,7 +13,28 @@
       color:#111;
       line-height:1.5;
     }
+    /* Back Button */
+    .back-button {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      background-color: #b8860b;
+      color: #000;
+      padding: 0.6rem 1rem;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.6);
+      transition: all 0.3s ease;
+      z-index: 1000;
+    }
 
+    .back-button:hover {
+      background-color: #ffd700;
+      color: #000;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.7);
+    }
     header{
       background:linear-gradient(90deg,#EFBF04,#000000);
       color:#fff;
@@ -77,6 +98,8 @@
   </style>
 </head>
 <body>
+  <!-- Back Button -->
+  <a class="back-button" href="index.html">&#8592; Back</a>
   <header>
     <img src="./logo.jpg" alt="Miss Mia Rose Logo">
     <h1>Alpha 6</h1>
