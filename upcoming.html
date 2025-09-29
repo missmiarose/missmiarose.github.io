@@ -147,6 +147,43 @@
       font-size: 0.9rem;
       border-top: 2px solid #b8860b;
     }
+    .lightbox {
+      display: none;
+      position: fixed;
+      z-index: 2000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.9);
+      justify-content: center;
+      align-items: center;
+    }
+
+    .lightbox img {
+      max-width: 90%;
+      max-height: 90%;
+      border: 4px solid #ffd700;
+      border-radius: 8px;
+    }
+
+    .lightbox:target {
+      display: flex;
+    }
+
+    .lightbox-close {
+      position: fixed;
+      top: 20px;
+      right: 30px;
+      font-size: 2rem;
+      color: #ffd700;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .lightbox-close:hover {
+      color: #b8860b;
+    }
   </style>
 </head>
 <body>
@@ -157,12 +194,12 @@
   </header>
 
   <main>
-    <!-- Short Content Section -->
+    <!-- Features Section -->
     <details open>
       <summary>Features</summary>
       <div>
         <div class="feature-item">
-          <img src="./alpha6.jpg" alt="Alpha-6">
+          <a href="#lb1"><img src="./alpha6.jpg" alt="Alpha-6"></a>
           <div>
             <h4>Alpha 6</h4>
             <p>Our flagship production is a full-length feature, loosely based on a female alpha wolf that lived in Yellowstone, it features original music by Tone Deff, performances from Mia Rose, Lexington Steele, Anna Clair Clouds and others.</p>
@@ -170,7 +207,7 @@
         </div>
 
         <div class="feature-item">
-          <img src="./sistersin.jpg" alt="Sister Sins Bad Habit">
+          <a href="#lb2"><img src="./sistersin.jpg" alt="Sister Sins Bad Habit"></a>
           <div>
             <h4>Sister Sins Bad Habit</h4>
             <p>A nun-sploitation film set in a post apocalyptic world, this film follows the adventures of Sister Sin as she uses her god-given sexual energy to hunt and kill the Devil.</p>
@@ -178,22 +215,21 @@
         </div>
       </div>
     </details>
-
-    <!-- Features Section -->
+    <!-- Short Content Section -->
     <details>
       <summary>Short Form Content</summary>
       <div>
         <div class="feature-item">
-          <img src="skank.jpg" alt="Skank History">
+          <a href="#lb3"><img src="./skank.jpg" alt="Skank History"></a>
           <div>
             <h4>Skank History</h4>
             <p>Inspired by FunnyOrDie's 'Drunk History', Skank History features real life sex workers, telling their wildest stories, which we re-enact with professional adult performers. </p>
           </div>
         </div>
 
-        <div class="feature-item">
-          <img src="./confessions.jpg" alt="Confessions">
-          <div>
+        <div class="feature-item">          
+          <a href="#lb4"><img src="./confessions.jpg" alt="Alpha-6"></a>
+            <div>
             <h4>Confessions</h4>
             <p>Salacious tales from the church Confessional, an exploration of secrets and sins.</p>
           </div>
@@ -201,6 +237,27 @@
       </div>
     </details>
   </main>
+    <!-- Lightboxes -->
+  <div id="lb1" class="lightbox">
+    <a href="#" class="lightbox-close">&times;</a>
+    <img src="https://via.placeholder.com/800" alt="Mini-Series Episodes Full Size">
+  </div>
+  <div id="lb2" class="lightbox">
+    <a href="#" class="lightbox-close">&times;</a>
+    <img src="https://via.placeholder.com/800" alt="Quick Collaborations Full Size">
+  </div>
+  <div id="lb3" class="lightbox">
+    <a href="#" class="lightbox-close">&times;</a>
+    <img src="https://via.placeholder.com/800" alt="Experimental Shorts Full Size">
+  </div>
+  <div id="lb4" class="lightbox">
+    <a href="#" class="lightbox-close">&times;</a>
+    <img src="https://via.placeholder.com/800" alt="High-Production Films Full Size">
+  </div>
+  <div id="lb5" class="lightbox">
+    <a href="#" class="lightbox-close">&times;</a>
+    <img src="https://via.placeholder.com/800" alt="Star Collaborations Full Size">
+  </div
 
   <footer>
     &copy; 2025 Miss Mia Rose Productions. All rights reserved.
