@@ -12,7 +12,20 @@
       margin: 0;
       padding: 0;
     }
-
+    .back-button {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      background-color: #b8860b;
+      color: #000;
+      padding: 0.6rem 1rem;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.6);
+      transition: all 0.3s ease;
+      z-index: 1000;
+    }
     header {
       background: linear-gradient(to right, #1c1c1c, #2b2b2b);
       padding: 2rem;
@@ -77,21 +90,45 @@
   </style>
 </head>
 <body>
+  <a class="back-button" href="./index.html">&#8592; Back</a>
   <header>
     <img src="logo.png" alt="Studio Logo">
     <h1>Image Gallery</h1>
-    <p>"Moments in Motion"</p>
+    <p>"Alpha 6 Shoot 1"</p>
   </header>
 
   <div class="gallery-container">
-    <div class="gallery-item"><img src="./gallery/gallery1.jpg" alt="Film Still 1"></div>
-    <div class="gallery-item"><img src="./gallery/gallery2.jpg" alt="Film Still 2"></div>
-    <div class="gallery-item"><img src="./gallery/gallery3.jpg" alt="Film Still 3"></div>
-    <div class="gallery-item"><img src="./gallery/gallery4.jpg" alt="Film Still 4"></div>
-    <div class="gallery-item"><img src="./gallery/gallery5.jpg" alt="Film Still 5"></div>
-    <div class="gallery-item"><img src="./gallery/gallery6.jpg" alt="Film Still 6"></div>
+    <div class="gallery-item">
+      <a href="./gallery/gallery1.jpg" target="_blank">
+      <img src="./gallery/gallery1.jpg" alt="Film Still 1">
+      </a>
   </div>
-
+  <div class="gallery-item">
+    <a href="./gallery/gallery2.jpg" target="_blank">
+      <img src="./gallery/gallery2.jpg" alt="Film Still 2">
+    </a>
+  </div>
+  <div class="gallery-item">
+    <a href="./gallery/gallery3.jpg" target="_blank">
+      <img src="./gallery/gallery3.jpg" alt="Film Still 3">
+    </a>
+  </div>
+  <div class="gallery-item">
+    <a href="./gallery/gallery4.jpg" target="_blank">
+      <img src="./gallery/gallery4.jpg" alt="Film Still 4">
+    </a>
+  </div>
+  <div class="gallery-item">
+    <a href="./gallery/gallery5.jpg" target="_blank">
+      <img src="./gallery/gallery5.jpg" alt="Film Still 5">
+    </a>
+  </div>
+  <div class="gallery-item">
+    <a href="./gallery/gallery6.jpg" target="_blank">
+      <img src="./gallery/gallery6.jpg" alt="Film Still 6">
+    </a>
+  </div>
+</div>
   <footer>
     &copy; 2025 Miss Mia Rose LLC. All Rights Reserved.
   </footer>
