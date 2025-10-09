@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Nadja</title>
+  <style>
+    /* Reset & base */
+    *{box-sizing:border-box;margin:0;padding:0}
+    html,body{height:100%}
+    body{
+      min-height:100vh;
+      font-family: "Inter", "Segoe UI", Roboto, system-ui, -apple-system, Arial, sans-serif;
+      display:grid;
+      place-items:center;
+      background: linear-gradient(160deg,#fff6f3 0%, #fffefc 30%, #f8fbff 100%);
+      color:#000;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      overflow:hidden;
+    }
+   /* Back Button */
+.back-button {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  background-color: #b8860b;
+  color: #000;
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.6);
+  transition: all 0.3s ease;
+  z-index: 1000;
+}
+    /* Artistic layered background */
+    .art {
+      position:fixed;
+      inset:0;
+      z-index:0;
+      pointer-events:none;
+      filter:contrast(.98) saturate(1.05);
+    }
+
+    /* Soft radial color blobs (SVG shapes) */
+    .blob {
+      position:absolute;
+      width:60vmax;
+      height:60vmax;
+      left:10%;
+      top:-20%;
+      transform:rotate(12deg);
+      opacity:.88;
+      mix-blend-mode:multiply;
+      filter:blur(60px);
+    }
+    .blob.alt {
+      left:auto; right:-5%;
+      top:10%;
+      transform:rotate(-18deg);
+      opacity:.78;
+      filter:blur(80px);
+      width:55vmax;
+      height:55vmax;
+    }
+
+    /* Subtle paper/noise texture over everything */
+    .noise {
+      position:fixed;
+      inset:0;
+      z-index:2;
+      background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="120" height="120"><filter id="n"><feTurbulence baseFrequency="0.9" stitchTiles="stitch" /><feColorMatrix type="saturate" values="0"/></filter><rect width="100%" height="100%" filter="url(%23n)" opacity="0.04"/></svg>');
+      opacity:0.85;
+      mix-blend-mode:overlay;
+      pointer-events:none;
+    }
+
+    /* Main content */
+    main{
+      position:relative;
+      z-index:3;
+      width:min(1100px,94%);
+      text-align:center;
+      padding:3rem 2rem;
+    }
+
+    h1{
+      font-size:clamp(36px, 10vw, 160px);
+      line-height:0.92;
+      letter-spacing: -0.02em;
+      font-weight:800;
+      color:#000;
+      /* Subtle typographic styling to feel intentional not crude */
+      text-transform:none;
+      text-wrap:balance;
+      text-shadow: 0 1px 0 rgba(255,255,255,0.06);
+      margin:0 auto;
+      max-width:1200px;
+      word-break:break-word;
+    }
+
+    /* small accessible caption only visible to screen readers */
+    .sr-only{
+      position:absolute;
+      left:-10000px;
+      width:1px;height:1px;overflow:hidden;
+    }
+
+    /* footer */
+    footer{
+      position:fixed;
+      left:50%;
+      transform:translateX(-50%);
+      bottom:18px;
+      z-index:3;
+      color:rgba(0,0,0,.45);
+      font-size:13px;
+      font-weight:600;
+      letter-spacing:.02em;
+      background:rgba(255,255,255,0.6);
+      padding:.28rem .6rem;
+      border-radius:999px;
+      border:1px solid rgba(0,0,0,0.06);
+      backdrop-filter: blur(4px);
+    }
+
+    @media (prefers-reduced-motion:reduce){
+      .blob, .blob.alt { transition:none !important; transform:none !important; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Back Button -->
+  <a class="back-button" href="http://missmiarose.com/contact/">&#8592; Back</a>
+  <!-- Decorative SVG blobs for an artistic background -->
+  <div class="art" aria-hidden="true">
+    <svg class="blob" viewBox="0 0 600 600" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="g1" x1="0" x2="1">
+          <stop offset="0" stop-color="#fff2f0"/>
+          <stop offset="0.45" stop-color="#ffd6e0"/>
+          <stop offset="1" stop-color="#ffeedd"/>
+        </linearGradient>
+        <filter id="grain"><feTurbulence baseFrequency="0.8" numOctaves="1" stitchTiles="stitch"/><feColorMatrix type="saturate" values="0"/></filter>
+      </defs>
+      <path fill="url(#g1)" d="M421.8,405.1Q385,510,282.6,538.6Q180.2,567.2,108.9,488.9Q37.6,410.6,52.2,300.7Q66.8,190.7,132.3,123.6Q197.8,56.6,318.2,88.3Q438.7,120,457.6,230.7Q476.6,341.5,421.8,405.1Z"/>
+    </svg>
+
+    <svg class="blob alt" viewBox="0 0 600 600" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="g2" x1="0" x2="1">
+          <stop offset="0" stop-color="#f0fbff"/>
+          <stop offset="0.45" stop-color="#d9f0ff"/>
+          <stop offset="1" stop-color="#fff7e6"/>
+        </linearGradient>
+      </defs>
+      <path fill="url(#g2)" d="M480.1,342.4Q453.2,434.8,372.4,486.7Q291.5,538.7,196.8,508.6Q102.2,478.6,57.5,387.7Q12.9,296.9,37.8,204.1Q62.7,111.3,149.0,73.7Q235.2,36.1,318.2,74.5Q401.1,113,470.7,190.8Q540.3,268.6,480.1,342.4Z"/>
+    </svg>
+  </div>
+
+  <main role="main" aria-labelledby="headline">
+    <h1 id="headline" lang="en">Nadja Is A Cunt.</h1>
+    <p class="sr-only">This page displays large black text reading: Nadja Is A Cunt.</p>
+  </main>
+
+  <div class="noise" aria-hidden="true"></div>
+
+  <footer aria-hidden="true">Artful background • Big bold type</footer>
+</body>
+</html>
