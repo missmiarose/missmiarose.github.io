@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Miss Mia Rose Productions | Mission Statement</title>
-  <style>
-    body {
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Team</title>
+<style>
+      body {
       font-family: "Georgia", serif;
       margin: 0;
       padding: 0;
@@ -57,109 +57,62 @@
       padding: 0 1rem;
     }
 
-    details {
-      background: #111; /* Dark card */
-      margin-bottom: 2rem;
-      padding: 1.5rem;
-      border-radius: 12px;
-      box-shadow: 0 3px 6px rgba(0,0,0,0.6);
-      border: 1px solid #333;
-      overflow: hidden;
-    }
+  .accordion {
+    max-width: 800px;
+    margin: 0 auto;
+    border-radius: 12px;
+    overflow: hidden;
+  }
 
-    summary {
-      font-size: 1.8rem;
-      font-weight: bold;
-      text-align: center;
-      color: #ffd700; /* Gold */
-      cursor: pointer;
-      outline: none;
-      list-style: none;
-    }
+  .accordion-item {
+    border-bottom: 1px solid #333;
+  }
 
-    summary::-webkit-details-marker {
-      display: none; /* Hide default arrow */
-    }
+  .accordion-header {
+    background: #222;
+    cursor: pointer;
+    padding: 20px;
+    font-size: 1.2em;
+    font-weight: bold;
+    transition: background 0.3s;
+  }
 
-    details[open] summary {
-      color: #b8860b; /* Darker gold when expanded */
-    }
+  .accordion-header:hover {
+    background: #333;
+  }
 
-    /* Collapsible content animation */
-    details > div {
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.6s ease, padding 0.6s ease;
-      padding: 0;
-    }
+  .accordion-content {
+    display: none;
+    background: #1a1a1a;
+    padding: 20px;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+  }
 
-    details[open] > div {
-      max-height: 2000px; /* large enough for full content */
-      padding-top: 1.5rem;
-    }
+  .accordion-content.open {
+    display: flex;
+  }
 
-    ul {
-      list-style-type: none;
-      padding: 0;
-    }
+  .bio {
+    flex: 2;
+  }
 
-    ul li {
-      margin-bottom: 1rem;
-      padding: 1rem;
-      background: #1a1a1a;
-      border-radius: 8px;
-      border: 1px solid #333;
-    }
+  .bio p {
+    line-height: 1.6;
+  }
 
-    ul li strong {
-      color: #ffd700;
-    }
+  .photo {
+    flex: 1;
+    max-width: 200px;
+  }
 
-    /* Team section styling */
-    .team {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 2rem;
-    }
-
-    .team-member {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      background: #1a1a1a;
-      padding: 1.5rem;
-      border-radius: 12px;
-      border: 1px solid #333;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.5);
-    }
-
-    .team-member img {
-      width: 150px;
-      height: 150px;
-      object-fit: cover;
-      border-radius: 50%;
-      border: 3px solid #ffd700;
-      margin-bottom: 1rem;
-    }
-
-    .team-member h3 {
-      margin: 0.5rem 0;
-      color: #ffd700;
-    }
-
-    .team-member p {
-      font-size: 0.95rem;
-      text-align: center;
-      color: #ddd;
-    }
-
-    @media (min-width: 700px) {
-      .team {
-        grid-template-columns: repeat(3, 1fr);
-      }
-    }
-
-    footer{
+  .photo img {
+    width: 100%;
+    border-radius: 8px;
+    object-fit: cover;
+  }
+footer{
       position: fixed;
       bottom: 0;
       left: 0;
@@ -172,7 +125,7 @@
       z-index: 1000;
     }
 
-  </style>
+</style>
 </head>
 <body>
   <a class="back-button" href="../index.html">&#8592; Back</a>
@@ -180,88 +133,105 @@
     <h1>About Us</h1>
     <p>Redefining the Future of Film</p>
   </header>
+<main>
+<div class="accordion">
 
-  <main>
-    <!-- Our Mission Section (OPEN by default) -->
-    <details open>
-      <summary>Our Mission</summary>
-      <div>
-        <p>
-          At <strong>Miss Mia Rose Productions</strong>, our mission is to build a progressive and equitable future 
-          for performers in the film industry. We are committed to:
-        </p>
-        <ul>
-          <li><strong>Equity in Compensation</strong>: Ensuring female performers receive fair pay and ongoing residuals that recognize the true value of their work.</li>
-          <li><strong>Financial Empowerment</strong>: Providing performers with access to trusted, partnered financial planners to support long-term financial security and independence.</li>
-          <li><strong>Career Growth & Transition</strong>: Creating pathways for performers who wish to move into more traditional acting roles, offering mentorship, training, and industry connections to facilitate their transition.</li>
-          <li><strong>Raising Production Standards</strong>: Moving the industry away from poorly produced amateur content by creating high-quality, polished adult films that embody professionalism and artistry.</li>
-          <li><strong>Performance Development</strong>: Offering on-site acting and improv coaching to support performers in building confidence, range, and versatility.</li>
-          <li><strong>Elevating the Art Form</strong>: Not only producing compelling adult films, but actively working to redefine and elevate the genre as a legitimate, innovative, and respected art form.</li>
-        </ul>
-        <p>
-          At Miss Mia Rose Productions, we believe in fostering a sustainable, respectful, and opportunity-rich environment where creativity and talent can thrive — setting a new standard for the industry.
-        </p>
+  <div class="accordion-item">
+    <div class="accordion-header">Mia Rose — Owner, Creative Director</div>
+    <div class="accordion-content open">
+      <div class="bio">
+        <p>    Mia Rose went from nothing to becoming a trailblazer, pioneer, and record-breaker.
+It's a story that begins in the gutter and culminates with Rose becoming associated
+with names like Howard Stern, James Gunn, and even Stan Lee. As a child, she faced
+a seemingly insurmountable challenge, but amazingly transformed that into a
+career filled with awards, surging popularity, and even a highlight in the publication
+People Australia.<br>
+Active nearly 20 years in the adult entertainment sphere, Mia kicked things off with
+XRCO's Cream Dream of the Year award, then went on to star in 140 standalone
+titles and enjoy further acclaim with multiple AVN nominations. She remains one of
+the best-known starlets of the era, and one who enjoys a fiercely loyal fanbase.<br>
+  But her successes don't stop with adult entertainment: Mia also rose to
+prominence as a gaming personality. She made history by becoming the first female
+streamer on Twitch, where she ultimately amassed a whopping 90,000 followers.
+She was even awarded an NPC in the mega computer game hit, World of Warcraft,
+which launched her even further into the gaming stratosphere.<br>
+  Lastly, she discovered and cultivated her love for man's best friend, even acting as
+a trainer of seeing-eye dogs for several years. And that led to her discovery of a
+real-life hero in the animal kingdom: the she-wolf that reigned above male wolves
+for years in Yellowstone, as detailed in a recent documentary. Mia is determined to
+capture that strength and bravery in her most important project to date, \"Alpha 6,\"
+a new adult film that will reinforce the fact that females can do anything.</p>
       </div>
-    </details>
-
-    <!-- Our Team Section (CLOSED by default) -->
-    <details>
-      <summary>Our Team</summary>
-      <div>
-        <p>
-          The strength of <strong>Miss Mia Rose Productions</strong> lies in the passion, creativity, and professionalism of our team. 
-          Together, we bring vision and dedication to every project:
-        </p>
-        <div class="team">
-          <!-- Team Member 1 -->
-          <div class="team-member">
-            <img src="./images/miarose.jpg" alt="Mia Rose">
-            <h3>Mia Rose</h3>
-            <p><strong>Founder, Performer & Creative Director</strong><br>
-              Mia leads with vision, integrity, and a passion for elevating the art of film. Her dedication drives the company’s mission of fairness, artistry, and innovation.</p>
-          </div>
-
-          <!-- Team Member 2 -->
-          <div class="team-member">
-            <img src="./images/alexfuchs.jpg" alt="Alex Fuchs">
-            <h3>Alex Fuchs</h3>
-            <p><strong>Executive Producer and Performer</strong><br>
-              With a background in both traditional theatre, opera, and product and project management. Alex ensures every production maintains the highest quality standards, while supporting creative freedom.</p>
-          </div>
-
-          <!-- Team Member 3 -->
-          <div class="team-member">
-            <img src="./images/cleanface.jpg" alt="Dirty Cleanface">
-            <h3>Cleanface</h3>
-            <p><strong>Director</strong><br>
-              Director of both adult and mainstream offerings. In addition to writing scripts, Cleanface brings both direction and cinematography to our productions.</p>
-          </div>
-        </div>
-        <p>
-          Our team is more than a collection of professionals — we are collaborators working together to set a new benchmark for excellence in the industry.
-        </p>
+      <div class="photo">
+        <img src="./images/miarose.jpg" alt="Mia Rose">
       </div>
-    </details>
-  </main>
+    </div>
+  </div>
 
+  <div class="accordion-item">
+    <div class="accordion-header">Cleanface — Director/Cinematographer</div>
+    <div class="accordion-content">
+      <div class="bio">
+        <p> Operating under his nom de Guerre, Cleanface is a seasoned filmmaker with over a decade of experience in motion
+picture storytelling. His extensive background encompasses various roles in
+the mainstream film industry, including cinematographer, editor, director, screenwriter,
+and producer. In 2025, JPC established Royal Imperial Pictures to embark on a journey of creative
+expression in the adult film industry. His accomplishments in film and television are many, but we 
+are under strict orders not to disclose them.</p>
+      </div>
+      <div class="photo">
+        <img src="./images/cleanface.jpg" alt="Dirty Cleanface">
+      </div>
+    </div>
+  </div>
+
+  <div class="accordion-item">
+    <div class="accordion-header">Alex Fuchs - Producer/Writer/Per</div>
+    <div class="accordion-content">
+      <div class="bio">
+        <p>Long before becoming an adult film 
+performer Alex was involved in the performing arts. 
+Hestarted his theater career at 4 years
+old, as Trouble in a production of Madame
+Butterfly at the Oakland Opera, since then
+he has worked in stage direction, as a
+stagehand, as a prop carpenter, and done
+light and sound rigging for a production
+company specializing in outdoor stage
+construction.<br>
+  Since joining the team at Mia Rose he has 
+performed, been responsible for props and 
+other practical effects, created the concept
+ for one of our short form projects, and is 
+co-writing our upcoming feature, 'Sister Sin', 
+along with Cleanface.</p>
+      </div>
+      <div class="photo">
+        <img src="./images/alexfuchs.jpg" alt="Alex Fuchs">
+      </div>
+    </div>
+  </div>
+
+</div>
+</main>
   <footer>
     &copy; 2025 Miss Mia Rose Productions. All rights reserved.
   </footer>
+<script>
+  const headers = document.querySelectorAll('.accordion-header');
 
-  <script>
-    // Make only one <details> open at a time
-    const detailsElements = document.querySelectorAll('details');
-    detailsElements.forEach((detail) => {
-      detail.addEventListener('toggle', (event) => {
-        if (detail.open) {
-          detailsElements.forEach((otherDetail) => {
-            if (otherDetail !== detail) {
-              otherDetail.removeAttribute('open');
-            }
-          });
-        }
-      });
+  headers.forEach(header => {
+    header.addEventListener('click', () => {
+      const content = header.nextElementSibling;
+
+      // Close all
+      document.querySelectorAll('.accordion-content').forEach(c => c.classList.remove('open'));
+      
+      // Open the clicked one
+      content.classList.add('open');
     });
-  </script>
+  });
+</script>
+
 </body>
 </html>
